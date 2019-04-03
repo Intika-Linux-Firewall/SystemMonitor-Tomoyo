@@ -1356,7 +1356,7 @@ void KSysGuardProcessList::copyCommandLine()
 
 void KSysGuardProcessList::tomoyoSwitchRuleProcess(QString value)
 {
-    //ccs-pstree | grep 20583 | awk '{$1=$2=$3=$4=""; print $0}' | awk '{$1=$1;print}'  
+    //TMPVAR=$(ccs-pstree | grep 20583 | awk '{$1=$2=$3=$4=""; print $0}' | awk '{$1=$1;print}')
     //ccs-setprofile -r 0 "$TMPVAR"
 
     // Tomoyo profiles (this depend on your tomoyo setup)
@@ -1364,35 +1364,32 @@ void KSysGuardProcessList::tomoyoSwitchRuleProcess(QString value)
     // 8 Block 
     // 0 Block with request 
 
-    QString comPart1        = "TMPVAR=$(ccs-pstree | grep ";
-    QString comPart2        = ""; //pid //QChar(int);
-    QString comPart3        = " | awk '{$1=$2=$3=$4=\"\"; print $0}' | awk '{$1=$1;print}'); ccs-setprofile -r ";
-    QString comPart4        = value;
-    QString comPart5        = " \"$TMPVAR\"";
-    QString commandFull     = comPart1 + comPart2 + comPart3 + comPart4 + comPart5;
-
     //Other method to convert a qtring
     //QString str1 = "Test";
     //QByteArray ba = str1.toLocal8Bit();
     //const char *c_str2 = ba.data();
     //printf("str2: %s", c_str2);
 
-    std::string CommStr  = commandFull.toStdString();
-    const char* CommChar = CommStr.c_str();
+    //int string conversion... otherwise use sprintf 
 
-    printf("Executing: %s\n", CommChar);
-    system(CommChar);
-
-    QModelIndexList selectedIndexes = d->mUi->treeView->selectionModel()->selectedRows();
-    QStringList selectedAsStrings;
-    QList< long long> selectedPids;
+    QString comPart1        = "SUCOM='TMPVAR=$(ccs-pstree | grep ";
+    QString comPart2        = ""; //pid
+    QString comPart3        = " | awk '\"'\"'{$1=$2=$3=$4=\"\"; print $0}'\"'\"' | awk '\"'\"'{$1=$1;print}'\"'\"'); ccs-setprofile -r ";
+    QString comPart4        = value;
+    QString comPart5        = " \"$TMPVAR\" > /tmp/tomoyo'; kdesu -c \"$SUCOM\"; ";
+    QString comPart6        = "gxmessage -center -ontop -title 'Tomoyo System Monitor - Result' -file /tmp/tomoyo;";
+    QString commandFull     = comPart1 + comPart2 + comPart3 + comPart4 + comPart5 + comPart6;
 
     QList<KSysGuard::Process *> processes = selectedProcesses();
-    foreach(KSysGuard::Process *process, processes) {
-        //selectedPids << process->pid();
-        printf("xx %d\n", (int) process->pid());
+    foreach(KSysGuard::Process *process, processes) {        
+        comPart2 = QString::number((int)process->pid());
+        commandFull = comPart1 + comPart2 + comPart3 + comPart4 + comPart5 + comPart6;
+        std::string CommStr  = commandFull.toStdString();
+        const char* CommChar = CommStr.c_str();
+        printf("Executing: %s\n", CommChar);
+        printf("PID: %d\n", (int)process->pid());
+        system(CommChar);
     }
-
 }
 
 void KSysGuardProcessList::sendSignalToSelectedProcesses(int sig, bool confirm)

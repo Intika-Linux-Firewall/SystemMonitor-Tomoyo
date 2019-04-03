@@ -128,6 +128,12 @@ class Q_DECL_EXPORT KSysGuardProcessList : public QWidget
         /** Inform the view that the user has changed the selection */
         void selectionChanged();
 
+        /** Copy command line process */
+        void copyCommandLine();
+
+        /** Set tomoyo profile for a process */
+        void tomoyoSwitchRuleProcess(QString value);
+
         /** Send a kill signal to all the processes that the user has selected.  Pops up a dialog box to confirm with the user */
         void killSelectedProcesses();
 

@@ -46,6 +46,7 @@
 #include <QtDBus>
 #include <QDialog>
 #include <QIcon>
+#include <QClipboard>
 
 #include <signal.h> //For SIGTERM
 
@@ -208,6 +209,10 @@ struct KSysGuardProcessListPrivate {
         terminate = new QAction(i18np("End Process", "End Processes", 1), q);
         terminate->setIcon(QIcon::fromTheme(QStringLiteral("process-stop")));
         terminate->setShortcut(Qt::Key_Delete);
+        copyCommand = new QAction(i18np("Copy Command Line", "Copy Commands Lines", 1), q);
+        tomoyoAllow = new QAction(i18np("Tomoyo : Allow Process Networking", "Tomoyo : Allow Processes Networking", 1), q);
+        tomoyoBlock = new QAction(i18np("Tomoyo : Block Process Networking", "Tomoyo : Block Processes Networking", 1), q);
+        tomoyoAsk   = new QAction(i18np("Tomoyo : Set Process To Ask For Permission", "Tomoyo : Set Processes To Ask For Permissions", 1), q);
         kill = new QAction(i18np("Forcibly Kill Process", "Forcibly Kill Processes", 1), q);
         kill->setIcon(QIcon::fromTheme(QStringLiteral("process-stop")));
         kill->setShortcut(Qt::SHIFT + Qt::Key_Delete);
@@ -271,6 +276,10 @@ struct KSysGuardProcessListPrivate {
 
     QAction *renice;
     QAction *terminate;
+    QAction *copyCommand;
+    QAction *tomoyoAllow;
+    QAction *tomoyoBlock;
+    QAction *tomoyoAsk;
     QAction *kill;
     QAction *selectParent;
     QAction *selectTracer;
@@ -364,7 +373,7 @@ KSysGuardProcessList::KSysGuardProcessList(QWidget* parent, const QString &hostN
     // Add all the actions to the main widget, and get all the actions to call actionTriggered when clicked
     QSignalMapper *signalMapper = new QSignalMapper(this);
     QList<QAction *> actions;
-    actions << d->renice << d->kill << d->terminate << d->selectParent << d->selectTracer << d->window << d->jumpToSearchFilter;
+    actions << d->renice << d->kill << d->terminate << d->copyCommand << d->tomoyoAllow << d->tomoyoBlock << d->tomoyoAsk<< d->selectParent << d->selectTracer << d->window << d->jumpToSearchFilter;
     actions << d->resume << d->sigStop << d->sigCont << d->sigHup << d->sigInt << d->sigTerm << d->sigKill << d->sigUsr1 << d->sigUsr2;
 
     foreach(QAction *action, actions) {
@@ -458,6 +467,10 @@ void KSysGuardProcessList::selectionChanged()
     d->renice->setText(i18np("Set Priority...", "Set Priority...", numSelected));
     d->kill->setText(i18np("Forcibly Kill Process", "Forcibly Kill Processes", numSelected));
     d->terminate->setText(i18ncp("Context menu", "End Process", "End Processes", numSelected));
+    d->copyCommand->setText(i18ncp("Context menu", "Copy Command Line", "Copy Commands Lines", numSelected));
+    d->tomoyoAllow->setText(i18ncp("Context menu", "Tomoyo : Allow Process Networking", "Tomoyo : Allow Processes Networking", numSelected));
+    d->tomoyoBlock->setText(i18ncp("Context menu", "Tomoyo : Block Process Networking", "Tomoyo : Block Processes Networking", numSelected));
+    d->tomoyoAsk->setText(i18ncp("Context menu", "Tomoyo : Set Process To Ask For Permission", "Tomoyo : Set Processes To Ask For Permissions", numSelected));
 }
 void KSysGuardProcessList::showProcessContextMenu(const QModelIndex &index) {
     if(!index.isValid()) return;
@@ -537,6 +550,12 @@ void KSysGuardProcessList::showProcessContextMenu(const QPoint &point) {
     }
     if (showSignalingEntries) {
         d->mProcessContextMenu->addSeparator();
+        d->mProcessContextMenu->addAction(d->copyCommand);
+        d->mProcessContextMenu->addSeparator();
+        d->mProcessContextMenu->addAction(d->tomoyoAllow);
+        d->mProcessContextMenu->addAction(d->tomoyoBlock);
+        d->mProcessContextMenu->addAction(d->tomoyoAsk);
+        d->mProcessContextMenu->addSeparator();
         d->mProcessContextMenu->addAction(d->terminate);
         if (numProcesses == 1 && !process->timeKillWasSent().isNull())
             d->mProcessContextMenu->addAction(d->kill);
@@ -554,6 +573,14 @@ void KSysGuardProcessList::actionTriggered(QObject *object) {
         //Escape was pressed. Do nothing.
     } else if(result == d->renice) {
         reniceSelectedProcesses();
+    } else if(result == d->copyCommand) {
+        copyCommandLine();
+    } else if(result == d->tomoyoAllow) {
+        tomoyoSwitchRuleProcess("2");
+    } else if(result == d->tomoyoBlock) {
+        tomoyoSwitchRuleProcess("8");
+    } else if(result == d->tomoyoAsk) {
+        tomoyoSwitchRuleProcess("0");
     } else if(result == d->terminate) {
         sendSignalToSelectedProcesses(SIGTERM, true);
     } else if(result == d->kill) {
@@ -1308,6 +1335,64 @@ bool KSysGuardProcessList::killProcesses(const QList< long long> &pids, int sig)
 void KSysGuardProcessList::killSelectedProcesses()
 {
     sendSignalToSelectedProcesses(SIGTERM, true);
+}
+
+void KSysGuardProcessList::copyCommandLine()
+{
+    QClipboard *clipboard = QApplication::clipboard();
+    clipboard->setText("");
+    int numProcesses = 0;
+
+    QList<KSysGuard::Process *> processes = selectedProcesses();
+    foreach(KSysGuard::Process *process, processes) {
+        if (numProcesses == 0 ){
+            clipboard->setText(clipboard->text() + process->command());
+        } else {
+            clipboard->setText(clipboard->text() + "\n" + process->command());
+        }        
+        numProcesses++;
+    }
+}
+
+void KSysGuardProcessList::tomoyoSwitchRuleProcess(QString value)
+{
+    //ccs-pstree | grep 20583 | awk '{$1=$2=$3=$4=""; print $0}' | awk '{$1=$1;print}'  
+    //ccs-setprofile -r 0 "$TMPVAR"
+
+    // Tomoyo profiles (this depend on your tomoyo setup)
+    // 2 Allow 
+    // 8 Block 
+    // 0 Block with request 
+
+    QString comPart1        = "TMPVAR=$(ccs-pstree | grep ";
+    QString comPart2        = ""; //pid //QChar(int);
+    QString comPart3        = " | awk '{$1=$2=$3=$4=\"\"; print $0}' | awk '{$1=$1;print}'); ccs-setprofile -r ";
+    QString comPart4        = value;
+    QString comPart5        = " \"$TMPVAR\"";
+    QString commandFull     = comPart1 + comPart2 + comPart3 + comPart4 + comPart5;
+
+    //Other method to convert a qtring
+    //QString str1 = "Test";
+    //QByteArray ba = str1.toLocal8Bit();
+    //const char *c_str2 = ba.data();
+    //printf("str2: %s", c_str2);
+
+    std::string CommStr  = commandFull.toStdString();
+    const char* CommChar = CommStr.c_str();
+
+    printf("Executing: %s\n", CommChar);
+    system(CommChar);
+
+    QModelIndexList selectedIndexes = d->mUi->treeView->selectionModel()->selectedRows();
+    QStringList selectedAsStrings;
+    QList< long long> selectedPids;
+
+    QList<KSysGuard::Process *> processes = selectedProcesses();
+    foreach(KSysGuard::Process *process, processes) {
+        //selectedPids << process->pid();
+        printf("xx %d\n", (int) process->pid());
+    }
+
 }
 
 void KSysGuardProcessList::sendSignalToSelectedProcesses(int sig, bool confirm)

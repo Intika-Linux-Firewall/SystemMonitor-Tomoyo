@@ -1,0 +1,159 @@
+# translation of processcore.po to Greek
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Spiros Georgaras <sng@hellug.gr>, 2007.
+# Toussis Manolis <manolis@koppermind.homelinux.org>, 2007.
+# Petros Vidalis <p_vidalis@hotmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: processcore\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-11-19 20:21+0100\n"
+"PO-Revision-Date: 2010-06-03 10:05+0300\n"
+"Last-Translator: Petros Vidalis <p_vidalis@hotmail.com>\n"
+"Language-Team: Ελληνικά <i18ngr@lists.hellug.gr>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: process.cpp:109 process.cpp:119
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Normal"
+msgstr "Κανονική"
+
+#: process.cpp:110 process.cpp:120
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very low priority"
+msgstr "Πολύ χαμηλή προτεραιότητα"
+
+#: process.cpp:111 process.cpp:121
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Low priority"
+msgstr "Χαμηλή προτεραιότητα"
+
+#: process.cpp:112 process.cpp:122
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very high priority"
+msgstr "Πολύ υψηλή προτεραιότητα"
+
+#: process.cpp:113 process.cpp:123
+#, kde-format
+msgctxt "Process Niceness"
+msgid "High priority"
+msgstr "Υψηλή προτεραιότητα"
+
+#: process.cpp:129
+#, kde-format
+msgctxt "Priority Class"
+msgid "None"
+msgstr "Καμία"
+
+#: process.cpp:130
+#, kde-format
+msgctxt "Priority Class"
+msgid "Real Time"
+msgstr "Πραγματικού χρόνου"
+
+#: process.cpp:131
+#, kde-format
+msgctxt "Priority Class"
+msgid "Best Effort"
+msgstr "Βέλτιστου έργου"
+
+#: process.cpp:132
+#, kde-format
+msgctxt "Priority Class"
+msgid "Idle"
+msgstr "Σε αδράνεια"
+
+#: process.cpp:133
+#, kde-format
+msgctxt "Priority Class"
+msgid "Unknown"
+msgstr "Άγνωστη"
+
+#: process.cpp:139
+#, kde-format
+msgctxt "process status"
+msgid "running"
+msgstr "εκτελείται"
+
+#: process.cpp:140
+#, kde-format
+msgctxt "process status"
+msgid "sleeping"
+msgstr "άεργη"
+
+#: process.cpp:141
+#, kde-format
+msgctxt "process status"
+msgid "disk sleep"
+msgstr "άεργη στο δίσκο"
+
+#: process.cpp:142
+#, kde-format
+msgctxt "process status"
+msgid "zombie"
+msgstr "zombie"
+
+#: process.cpp:143
+#, kde-format
+msgctxt "process status"
+msgid "stopped"
+msgstr "σταματημένη"
+
+#: process.cpp:144
+#, kde-format
+msgctxt "process status"
+msgid "paging"
+msgstr "σελιδοποίηση"
+
+#: process.cpp:145
+#, kde-format
+msgctxt "process status"
+msgid "finished"
+msgstr "ολοκληρώθηκε"
+
+#: process.cpp:146
+#, kde-format
+msgctxt "process status"
+msgid "unknown"
+msgstr "άγνωστη"
+
+#: process.cpp:152
+#, kde-format
+msgctxt "Scheduler"
+msgid "FIFO"
+msgstr "FIFO"
+
+#: process.cpp:153
+#, kde-format
+msgctxt "Scheduler"
+msgid "Round Robin"
+msgstr "Round Robin"
+
+#: process.cpp:154
+#, kde-format
+msgctxt "Scheduler"
+msgid "Interactive"
+msgstr "Διαδραστικό"
+
+#: process.cpp:155
+#, kde-format
+msgctxt "Scheduler"
+msgid "Batch"
+msgstr "Batch"
+
+#: process.cpp:156
+#, kde-format
+msgctxt "Scheduler"
+msgid "Idle"
+msgstr "Σε αδράνεια"

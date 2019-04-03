@@ -1,0 +1,158 @@
+# translation of processcore.po to marathi
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Sandeep Shedmake <sandeep.shedmake@gmail.com>, 2009.
+# Chetan Khona <chetan@kompkin.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: processcore\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-11-19 20:21+0100\n"
+"PO-Revision-Date: 2013-02-06 17:10+0530\n"
+"Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: process.cpp:109 process.cpp:119
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Normal"
+msgstr "सामान्य"
+
+#: process.cpp:110 process.cpp:120
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very low priority"
+msgstr "खूप कमी प्राधान्यता"
+
+#: process.cpp:111 process.cpp:121
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Low priority"
+msgstr "कमी प्राधान्यता"
+
+#: process.cpp:112 process.cpp:122
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very high priority"
+msgstr "खूप जास्त प्राधान्यता"
+
+#: process.cpp:113 process.cpp:123
+#, kde-format
+msgctxt "Process Niceness"
+msgid "High priority"
+msgstr "जास्त प्राधान्यता"
+
+#: process.cpp:129
+#, kde-format
+msgctxt "Priority Class"
+msgid "None"
+msgstr "काही नाही"
+
+#: process.cpp:130
+#, kde-format
+msgctxt "Priority Class"
+msgid "Real Time"
+msgstr "रियल टाइम"
+
+#: process.cpp:131
+#, kde-format
+msgctxt "Priority Class"
+msgid "Best Effort"
+msgstr "श्रेष्ठ प्रयत्न"
+
+#: process.cpp:132
+#, kde-format
+msgctxt "Priority Class"
+msgid "Idle"
+msgstr "रिकामे"
+
+#: process.cpp:133
+#, kde-format
+msgctxt "Priority Class"
+msgid "Unknown"
+msgstr "अपरिचीत"
+
+#: process.cpp:139
+#, kde-format
+msgctxt "process status"
+msgid "running"
+msgstr "कार्यरत आहे"
+
+#: process.cpp:140
+#, kde-format
+msgctxt "process status"
+msgid "sleeping"
+msgstr "झोपले आहे"
+
+#: process.cpp:141
+#, kde-format
+msgctxt "process status"
+msgid "disk sleep"
+msgstr "डिस्क झोप"
+
+#: process.cpp:142
+#, kde-format
+msgctxt "process status"
+msgid "zombie"
+msgstr "झोंबी"
+
+#: process.cpp:143
+#, kde-format
+msgctxt "process status"
+msgid "stopped"
+msgstr "थांबले"
+
+#: process.cpp:144
+#, kde-format
+msgctxt "process status"
+msgid "paging"
+msgstr "पेजिंग"
+
+#: process.cpp:145
+#, kde-format
+msgctxt "process status"
+msgid "finished"
+msgstr "संपले"
+
+#: process.cpp:146
+#, kde-format
+msgctxt "process status"
+msgid "unknown"
+msgstr "अपरिचीत"
+
+#: process.cpp:152
+#, kde-format
+msgctxt "Scheduler"
+msgid "FIFO"
+msgstr "FIFO"
+
+#: process.cpp:153
+#, kde-format
+msgctxt "Scheduler"
+msgid "Round Robin"
+msgstr "राउंड रोबिन"
+
+#: process.cpp:154
+#, kde-format
+msgctxt "Scheduler"
+msgid "Interactive"
+msgstr "इंटरएक्टीव"
+
+#: process.cpp:155
+#, kde-format
+msgctxt "Scheduler"
+msgid "Batch"
+msgstr "समूह"
+
+#: process.cpp:156
+#, kde-format
+msgctxt "Scheduler"
+msgid "Idle"
+msgstr "रिकामे"

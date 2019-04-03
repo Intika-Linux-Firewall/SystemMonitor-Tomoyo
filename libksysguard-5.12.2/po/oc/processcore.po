@@ -1,0 +1,159 @@
+# translation of processcore.po to Occitan (lengadocian)
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2007, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: processcore\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-11-19 20:21+0100\n"
+"PO-Revision-Date: 2008-08-05 22:26+0200\n"
+"Last-Translator: Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>\n"
+"Language-Team: Occitan (lengadocian) <ubuntu-l10n-oci@lists.ubuntu.com>\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: process.cpp:109 process.cpp:119
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Normal"
+msgstr "Normal"
+
+#: process.cpp:110 process.cpp:120
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very low priority"
+msgstr ""
+
+#: process.cpp:111 process.cpp:121
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Low priority"
+msgstr ""
+
+#: process.cpp:112 process.cpp:122
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very high priority"
+msgstr ""
+
+#: process.cpp:113 process.cpp:123
+#, kde-format
+msgctxt "Process Niceness"
+msgid "High priority"
+msgstr ""
+
+#: process.cpp:129
+#, kde-format
+msgctxt "Priority Class"
+msgid "None"
+msgstr "Pas cap"
+
+#: process.cpp:130
+#, kde-format
+msgctxt "Priority Class"
+msgid "Real Time"
+msgstr ""
+
+#: process.cpp:131
+#, kde-format
+msgctxt "Priority Class"
+msgid "Best Effort"
+msgstr ""
+
+#: process.cpp:132
+#, kde-format
+msgctxt "Priority Class"
+msgid "Idle"
+msgstr "Inactiu"
+
+#: process.cpp:133
+#, kde-format
+msgctxt "Priority Class"
+msgid "Unknown"
+msgstr "Desconegut"
+
+#: process.cpp:139
+#, kde-format
+msgctxt "process status"
+msgid "running"
+msgstr ""
+
+#: process.cpp:140
+#, kde-format
+msgctxt "process status"
+msgid "sleeping"
+msgstr ""
+
+#: process.cpp:141
+#, kde-format
+msgctxt "process status"
+msgid "disk sleep"
+msgstr ""
+
+#: process.cpp:142
+#, kde-format
+msgctxt "process status"
+msgid "zombie"
+msgstr ""
+
+#: process.cpp:143
+#, kde-format
+msgctxt "process status"
+msgid "stopped"
+msgstr ""
+
+#: process.cpp:144
+#, kde-format
+msgctxt "process status"
+msgid "paging"
+msgstr ""
+
+#: process.cpp:145
+#, kde-format
+msgctxt "process status"
+msgid "finished"
+msgstr ""
+
+#: process.cpp:146
+#, kde-format
+msgctxt "process status"
+msgid "unknown"
+msgstr "desconegut"
+
+#: process.cpp:152
+#, kde-format
+msgctxt "Scheduler"
+msgid "FIFO"
+msgstr ""
+
+#: process.cpp:153
+#, kde-format
+msgctxt "Scheduler"
+msgid "Round Robin"
+msgstr ""
+
+#: process.cpp:154
+#, kde-format
+msgctxt "Scheduler"
+msgid "Interactive"
+msgstr ""
+
+#: process.cpp:155
+#, kde-format
+msgctxt "Scheduler"
+msgid "Batch"
+msgstr ""
+
+#: process.cpp:156
+#, fuzzy, kde-format
+#| msgctxt "Priority Class"
+#| msgid "Idle"
+msgctxt "Scheduler"
+msgid "Idle"
+msgstr "Inactiu"

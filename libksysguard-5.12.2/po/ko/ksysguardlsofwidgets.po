@@ -1,0 +1,51 @@
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kdebase package.
+#
+# Shinjo Park <kde@peremen.name>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: ksysguardlsofwidgets\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-11-19 20:21+0100\n"
+"PO-Revision-Date: 2008-08-21 23:28+0900\n"
+"Last-Translator: Shinjo Park <kde@peremen.name>\n"
+"Language-Team: Korean <cho.sungjae@gmail.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lsof.cpp:21
+#, kde-format
+msgctxt "Short for File Descriptor"
+msgid "FD"
+msgstr "파일 설명자"
+
+#. i18n: ectx: property (text), widget (KLsofWidget, klsofwidget)
+#: lsof.cpp:21 LsofSearchWidget.ui:28
+#, kde-format
+msgid "Type"
+msgstr "종류"
+
+#: lsof.cpp:21
+#, kde-format
+msgid "Object"
+msgstr "개체"
+
+#: LsofSearchWidget.cpp:39
+#, kde-format
+msgid "Renice Process"
+msgstr "프로세스 Renice 재설정 "
+
+#. i18n: ectx: property (text), widget (KLsofWidget, klsofwidget)
+#: LsofSearchWidget.ui:23
+#, kde-format
+msgid "Stream"
+msgstr "스트림"
+
+#. i18n: ectx: property (text), widget (KLsofWidget, klsofwidget)
+#: LsofSearchWidget.ui:33
+#, kde-format
+msgid "Filename"
+msgstr "파일 이름"

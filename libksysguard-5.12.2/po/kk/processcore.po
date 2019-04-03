@@ -1,0 +1,158 @@
+# translation of processcore.po to Kazakh
+#
+# Sairan Kikkarin <sairan@computer.org>, 2007, 2008.
+# Sairan Kikkarin <sairan@computer.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: processcore\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-11-19 20:21+0100\n"
+"PO-Revision-Date: 2010-05-22 21:00+0600\n"
+"Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
+"Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
+"Language: kk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"\n"
+"\n"
+
+#: process.cpp:109 process.cpp:119
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Normal"
+msgstr "Кәдімгі"
+
+#: process.cpp:110 process.cpp:120
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very low priority"
+msgstr "Өте төмен артықшылық"
+
+#: process.cpp:111 process.cpp:121
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Low priority"
+msgstr "Төмен артықшылық"
+
+#: process.cpp:112 process.cpp:122
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very high priority"
+msgstr "Өте жоғары артықшылық"
+
+#: process.cpp:113 process.cpp:123
+#, kde-format
+msgctxt "Process Niceness"
+msgid "High priority"
+msgstr "Жоғары артықшылық"
+
+#: process.cpp:129
+#, kde-format
+msgctxt "Priority Class"
+msgid "None"
+msgstr "Жоқ"
+
+#: process.cpp:130
+#, kde-format
+msgctxt "Priority Class"
+msgid "Real Time"
+msgstr "Толық уақыт"
+
+#: process.cpp:131
+#, kde-format
+msgctxt "Priority Class"
+msgid "Best Effort"
+msgstr "Бар күшін салу"
+
+#: process.cpp:132
+#, kde-format
+msgctxt "Priority Class"
+msgid "Idle"
+msgstr "Іссіз"
+
+#: process.cpp:133
+#, kde-format
+msgctxt "Priority Class"
+msgid "Unknown"
+msgstr "Беймәлім"
+
+#: process.cpp:139
+#, kde-format
+msgctxt "process status"
+msgid "running"
+msgstr "орындалуда"
+
+#: process.cpp:140
+#, kde-format
+msgctxt "process status"
+msgid "sleeping"
+msgstr "ұйқыда"
+
+#: process.cpp:141
+#, kde-format
+msgctxt "process status"
+msgid "disk sleep"
+msgstr "дискіде ұйқыда"
+
+#: process.cpp:142
+#, kde-format
+msgctxt "process status"
+msgid "zombie"
+msgstr "зомби"
+
+#: process.cpp:143
+#, kde-format
+msgctxt "process status"
+msgid "stopped"
+msgstr "тоқтатылған"
+
+#: process.cpp:144
+#, kde-format
+msgctxt "process status"
+msgid "paging"
+msgstr "свопинг"
+
+#: process.cpp:145
+#, kde-format
+msgctxt "process status"
+msgid "finished"
+msgstr "аяқталған"
+
+#: process.cpp:146
+#, kde-format
+msgctxt "process status"
+msgid "unknown"
+msgstr "беймәлім"
+
+#: process.cpp:152
+#, kde-format
+msgctxt "Scheduler"
+msgid "FIFO"
+msgstr "FIFO"
+
+#: process.cpp:153
+#, kde-format
+msgctxt "Scheduler"
+msgid "Round Robin"
+msgstr "Тұйық кезек"
+
+#: process.cpp:154
+#, kde-format
+msgctxt "Scheduler"
+msgid "Interactive"
+msgstr "Интерактівті"
+
+#: process.cpp:155
+#, kde-format
+msgctxt "Scheduler"
+msgid "Batch"
+msgstr "Дестелік"
+
+#: process.cpp:156
+#, kde-format
+msgctxt "Scheduler"
+msgid "Idle"
+msgstr "Іссіз"

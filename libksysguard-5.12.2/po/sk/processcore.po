@@ -1,0 +1,156 @@
+# translation of processcore.po to Slovak
+# Klara Cihlarova <koty@seznam.cz>, 2007.
+# Lukáš Tinkl <ltinkl@redhat.com>, 2009.
+# Milan Baša <minkob@mail.t-com.sk>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: processcore\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2016-11-19 20:21+0100\n"
+"PO-Revision-Date: 2012-01-16 18:17+0100\n"
+"Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: process.cpp:109 process.cpp:119
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Normal"
+msgstr "Normálny"
+
+#: process.cpp:110 process.cpp:120
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very low priority"
+msgstr "Veľmi nízka priorita"
+
+#: process.cpp:111 process.cpp:121
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Low priority"
+msgstr "Nízka priorita"
+
+#: process.cpp:112 process.cpp:122
+#, kde-format
+msgctxt "Process Niceness"
+msgid "Very high priority"
+msgstr "Veľmi vysoká priorita"
+
+#: process.cpp:113 process.cpp:123
+#, kde-format
+msgctxt "Process Niceness"
+msgid "High priority"
+msgstr "Vysoká priorita"
+
+#: process.cpp:129
+#, kde-format
+msgctxt "Priority Class"
+msgid "None"
+msgstr "Žiadny"
+
+#: process.cpp:130
+#, kde-format
+msgctxt "Priority Class"
+msgid "Real Time"
+msgstr "Reálny čas"
+
+#: process.cpp:131
+#, kde-format
+msgctxt "Priority Class"
+msgid "Best Effort"
+msgstr "Najlepší výkon"
+
+#: process.cpp:132
+#, kde-format
+msgctxt "Priority Class"
+msgid "Idle"
+msgstr "Nečinný"
+
+#: process.cpp:133
+#, kde-format
+msgctxt "Priority Class"
+msgid "Unknown"
+msgstr "Neznámy"
+
+#: process.cpp:139
+#, kde-format
+msgctxt "process status"
+msgid "running"
+msgstr "bežiaci"
+
+#: process.cpp:140
+#, kde-format
+msgctxt "process status"
+msgid "sleeping"
+msgstr "spiaci"
+
+#: process.cpp:141
+#, kde-format
+msgctxt "process status"
+msgid "disk sleep"
+msgstr "spiaci disk"
+
+#: process.cpp:142
+#, kde-format
+msgctxt "process status"
+msgid "zombie"
+msgstr "zombie"
+
+#: process.cpp:143
+#, kde-format
+msgctxt "process status"
+msgid "stopped"
+msgstr "zastavený"
+
+#: process.cpp:144
+#, kde-format
+msgctxt "process status"
+msgid "paging"
+msgstr "stránkovanie"
+
+#: process.cpp:145
+#, kde-format
+msgctxt "process status"
+msgid "finished"
+msgstr "skončené"
+
+#: process.cpp:146
+#, kde-format
+msgctxt "process status"
+msgid "unknown"
+msgstr "neznámy"
+
+#: process.cpp:152
+#, kde-format
+msgctxt "Scheduler"
+msgid "FIFO"
+msgstr "FIFO"
+
+#: process.cpp:153
+#, kde-format
+msgctxt "Scheduler"
+msgid "Round Robin"
+msgstr "Cyklická obsluha"
+
+#: process.cpp:154
+#, kde-format
+msgctxt "Scheduler"
+msgid "Interactive"
+msgstr "Interaktívny"
+
+#: process.cpp:155
+#, kde-format
+msgctxt "Scheduler"
+msgid "Batch"
+msgstr "Dávkový"
+
+#: process.cpp:156
+#, kde-format
+msgctxt "Scheduler"
+msgid "Idle"
+msgstr "Nečinný"
